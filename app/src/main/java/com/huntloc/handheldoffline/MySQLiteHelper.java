@@ -61,16 +61,17 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 		db.close();
 	}
 
-	public List<Journal> getAllRecords() {
+	public List<Journal> getAllRecords(String log) {
 		List<Journal> records = new LinkedList<Journal>();
-		String query = "SELECT  * FROM " + TABLE_RECORD + " where "+ KEY_SENT +" = 0";
+		String query = log!=null?"SELECT  * FROM " + TABLE_RECORD + " where "+ KEY_SENT +" = 0 and " + KEY_DESC + " = '"+log+"'":"SELECT  * FROM " + TABLE_RECORD + " where "+ KEY_SENT +" = 0";
 		SQLiteDatabase db = this.getWritableDatabase();
 		Cursor cursor = db.rawQuery(query, null);
 		Journal record = null;
 		if (cursor.moveToFirst()) {
 			do {
-				record = new Journal(cursor.getString(0),cursor.getString(1),cursor.getString(2),cursor.getString(3),Long.parseLong(cursor.getString(4)),cursor.getInt(5) == 1 ? true : false, cursor.getString(6), cursor.getString(7));
+				record = new Journal(cursor.getString(0),cursor.getString(1),cursor.getString(2),cursor.getString(3),Long.parseLong(cursor.getString(4)),cursor.getInt(5) == 1, cursor.getString(6), cursor.getString(7));
 				records.add(record);
+
 			} while (cursor.moveToNext());
 			Log.d("getAllRecords()", records.size()+" Records");
 		}
@@ -83,7 +84,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 		SQLiteDatabase db = this.getWritableDatabase();
 		db.execSQL("delete from " + TABLE_RECORD);
 		Log.d("deleteRecords()", "[]");
-		getAllRecords();
+		getAllRecords(null);
 		db.close();
 	}
 
@@ -119,13 +120,11 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 		Log.d("deletePortraits()", "[]");
 		db.close();
 	}
-	public Portrait getPortrait(String internalCode) {
+	public Portrait getPortrait(String code) {
 		Portrait portrait = null;
-		String query = "SELECT  * FROM " + TABLE_PORTRAIT + " where "+ KEY_INTERNAL_CODE +" = '"+internalCode+"'";
+		String query = "SELECT  * FROM " + TABLE_PORTRAIT + " where "+ KEY_INTERNAL_CODE +" = '"+code+"' OR "+ KEY_PRINTED_CODE+ "='"+code+"'";
 		
-		//String where = KEY_INTERNAL_CODE+"='"+internalCode+"'";
 		SQLiteDatabase db = this.getWritableDatabase();
-		//String[] args = {internalCode};
 		Cursor cursor = db.rawQuery(query, null);
 		Log.d("count", ""+cursor.getColumnCount());
 		

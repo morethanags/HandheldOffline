@@ -37,8 +37,7 @@ public class JournalActivity extends AppCompatActivity {
 		actionBar.setDisplayHomeAsUpEnabled(true);*/
 
 		
-		
-		
+
 		cardIdText = (TextView) findViewById(R.id.textView_CardId);
 		iv_portrait = (ImageView) findViewById(R.id.imageView_Portrait);
 		MySQLiteHelper db = new MySQLiteHelper(this.getApplicationContext());
@@ -69,8 +68,9 @@ public class JournalActivity extends AppCompatActivity {
 		buttonEntrance.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				String door = getSharedPreferences(MainActivity.PREFS_NAME, 0).getString("door_id", "Main Gate");
-				String log = getSharedPreferences(MainActivity.PREFS_NAME, 0).getString("logEntry_id", "EntryMainGate");
+				String door = getSharedPreferences(MainActivity.PREFS_NAME, 0).getString("door_id", "Sliding Gate");
+				String area = getSharedPreferences(MainActivity.PREFS_NAME, 0).getString("door_id", "Process");
+				String log = getSharedPreferences(MainActivity.PREFS_NAME, 0).getString("logEntry_id", "EntrySlidingGate");
 				String desc = getSharedPreferences(MainActivity.PREFS_NAME, 0).getString("descLogEntry_id", "Entrance");
 				addRecord(badge, name, door, log, desc );
 			}
@@ -79,8 +79,9 @@ public class JournalActivity extends AppCompatActivity {
 		buttonExit.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				String door = getSharedPreferences(MainActivity.PREFS_NAME, 0).getString("door_id", "Main Gate");
-				String log = getSharedPreferences(MainActivity.PREFS_NAME, 0).getString("logExit_id", "ExitMainGate");
+				String door = getSharedPreferences(MainActivity.PREFS_NAME, 0).getString("door_id", "Sliding Gate");
+				String area = getSharedPreferences(MainActivity.PREFS_NAME, 0).getString("door_id", "Process");
+				String log = getSharedPreferences(MainActivity.PREFS_NAME, 0).getString("logExit_id", "ExitSlidingGate");
 				String desc = getSharedPreferences(MainActivity.PREFS_NAME, 0).getString("descLogExit_id", "Exit");
 				addRecord(badge, name, door, log, desc);
 			}

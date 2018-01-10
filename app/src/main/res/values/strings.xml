@@ -3,25 +3,27 @@
 
     <string name="app_name">Handheld Offline</string>
     <string name="action_scan">Scan</string>
-    <string name="action_list">Refrescar Registros</string>
-    <string name="action_send">Enviar Registros al CCURE</string>
-    <string name="action_send_message">Enviando Registros al CCURE</string>
+    <!--<string name="action_list">Refrescar Registros</string>
+    <string name="action_send">Enviar Registros al CCURE</string>-->
+    <string name="action_send_message">Enviando Registros</string>
     <string name="action_delete">Eliminar Registros</string>
     <string name="door_menu_title">Cambiar Puerta</string>
     <string name="action_update">Actualizar Información</string>
     <string name="action_update_message">Actualizando Información</string>
-
+    <string name="credential_id">Badge Id:</string>
+    <string name="credential_hint">Tap a badge or enter Id</string>
+    <string name="button_Check_text">Check</string>
     <string name="door_id">North Entrance</string>
-    
-    
+
+
     <string name="entrance_log_id">Entrance</string>
     <string name="exit_log_id">Exit</string>
-    
+
     <string name="dialog_delete_title">Eliminar Registros?</string>
     <string name="dialog_delete_message">Todos los registros serán eliminados!</string>
     <string name="dialog_delete_delete">Eliminar</string>
     <string name="dialog_delete_cancel">Cancelar</string>
-     <!--<string name="service_url">http://sniitdtop01.plng.pvt/ccure</string>-->
+    <!--<string name="service_url">http://sniitdtop01.plng.pvt/ccure</string>-->
     <string name="service_url">http://plngmelas35.plng.pvt/ccure</string>
     <string name="title_activity_journal">JournalActivity</string>
     <string name="hello_world">Hello world!</string>
@@ -33,6 +35,9 @@
 
     <string name="content_description">Portrait</string>
     <string name="title_activity_journal_activity1">JournalActivity1</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
 

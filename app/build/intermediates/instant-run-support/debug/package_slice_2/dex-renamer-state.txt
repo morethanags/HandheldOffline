@@ -1,4 +1,4 @@
-#Tue Dec 19 08:44:55 COT 2017
+#Wed Jan 10 17:16:47 COT 2018
 base.0=E\:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_2
 renamed.0=classes.dex
 file.0=E\:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_2\\classes.dex

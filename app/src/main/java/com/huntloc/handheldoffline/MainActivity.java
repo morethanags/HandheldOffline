@@ -6,27 +6,27 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 import java.util.List;
 import java.util.UUID;
 
-/*import org.apache.http.client.HttpClient;
-import org.apache.http.client.ResponseHandler;
 
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.BasicResponseHandler;
-import org.apache.http.impl.client.DefaultHttpClient;*/
 import org.json.JSONArray;
 
 import org.json.JSONObject;
 
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener;
-import android.support.v7.app.ActionBarActivity;
+
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
+
 import android.support.v7.app.AppCompatActivity;
-import android.text.format.DateFormat;
+import android.support.v7.widget.Toolbar;
+
 import android.util.Log;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -41,31 +41,45 @@ import android.nfc.NfcAdapter;
 import android.nfc.Tag;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Handler;
+
 import android.os.Parcelable;
+
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ListAdapter;
-import android.widget.ListView;
-import android.widget.SimpleAdapter;
+
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements
-		OnRefreshListener {
+public class MainActivity extends AppCompatActivity  implements
+		HandheldFragment.OnHandheldFragmentInteractionListener	,
+EntranceFragment.OnEntranceFragmentInteractionListener, ExitFragment.OnExitFragmentInteractionListener{
 	private NfcAdapter mNfcAdapter;
 	private static long back_pressed;
 	public static final String EXTRA_MESSAGE = "com.huntloc.handheldoffline.MESSAGE";
 	public static final String PREFS_NAME = "HandheldOfflinePrefsFile";
-	private SwipeRefreshLayout swipeRefreshLayout;
+	//private SwipeRefreshLayout swipeRefreshLayout;
 	ProgressDialog progress;
 
+	TextView textView_lastupdate_date;
+	private SectionsPagerAdapter mSectionsPagerAdapter;
+
+	private ViewPager mViewPager;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.list_Layout);
-		swipeRefreshLayout.setOnRefreshListener(this);
+
+		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+		setSupportActionBar(toolbar);
+		mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+
+		// Set up the ViewPager with the sections adapter.
+		mViewPager = (ViewPager) findViewById(R.id.container);
+		mViewPager.setAdapter(mSectionsPagerAdapter);
+		mViewPager.setOffscreenPageLimit(2);
+
+		TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+		tabLayout.setupWithViewPager(mViewPager);
 
 		mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
 		if (mNfcAdapter == null) {
@@ -79,23 +93,23 @@ public class MainActivity extends AppCompatActivity implements
 					.show();
 		}
 		handleIntent(getIntent());
-		listRecords();
+		//listRecords();
 
 		SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
 		SharedPreferences.Editor editor = settings.edit();
-		
+
 		/**Puertas*/
 		if (!settings.contains("door_id")) {
-			editor.putString("door_id", "Main Gate");
+			editor.putString("door_id", "Sliding Gate");
 		}
 		if (!settings.contains("area_id")) {
-			editor.putString("area_id", "Plant");
+			editor.putString("area_id", "Process");
 		}
 		if (!settings.contains("logEntry_id")) {
-			editor.putString("logEntry_id", "EntryMainGate");
+			editor.putString("logEntry_id", "EntrySlidingGate");
 		}
 		if (!settings.contains("logExit_id")) {
-			editor.putString("logExit_id", "ExitMainGate");
+			editor.putString("logExit_id", "ExitSlidingGate");
 		}
 		/***/
 		
@@ -107,10 +121,6 @@ public class MainActivity extends AppCompatActivity implements
 		}
 		editor.commit();
 
-		((TextView) findViewById(R.id.textView_DoorId))
-				.setText(getSharedPreferences(PREFS_NAME, 0).getString(
-						"door_id", "Main Gate"));
-
 		progress = new ProgressDialog(this);
 		progress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
 		progress.setIndeterminate(true);
@@ -118,22 +128,21 @@ public class MainActivity extends AppCompatActivity implements
 		progress.setProgressPercentFormat(null);
 		progress.setCanceledOnTouchOutside(false);
 
+		textView_lastupdate_date = (TextView) findViewById(R.id.textView_lastupdate_date);
+		textView_lastupdate_date.setText("Última actualización: " + getSharedPreferences(PREFS_NAME, 0).getString("lastupdate", "No se ha sincronizado"));
 	}
+	private void showLastUpdate() {
 
+		textView_lastupdate_date.setText("Última actualización: "
+				+ getSharedPreferences(PREFS_NAME, 0).getString("lastupdate",
+				"No se ha sincronizado"));
+	}
 	@Override
 	public void onResume() {
 		super.onResume();
-		listRecords();
 	}
 
-	public void onRefresh() {
-		swipeRefreshLayout.setRefreshing(true);
-		new Handler().postDelayed(new Runnable() {
-			public void run() {
-				listRecords();
-			}
-		}, 1000);
-	}
+
 
 	private void handleIntent(Intent intent) {
 		String action = intent.getAction();
@@ -153,67 +162,33 @@ public class MainActivity extends AppCompatActivity implements
 				Tag tag = (Tag) parcelable;
 
 				byte[] id = tag.getId();
-
 				MySQLiteHelper db = new MySQLiteHelper(
-						this.getApplicationContext());
+						getApplicationContext());
 				Portrait portrait = db.getPortrait(Long.toString(getDec(id)));
-				if (portrait != null) {
-					Intent newIntent = new Intent(MainActivity.this,
-							JournalActivity.class);
-					newIntent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
-					newIntent
-							.putExtra(EXTRA_MESSAGE, Long.toString(getDec(id)));
-					startActivity(newIntent);
-				} else {
-					Toast.makeText(this, "Couldn't find badge.",
-							Toast.LENGTH_LONG).show();
+
+				HandheldFragment handheldFragment = ((HandheldFragment) mSectionsPagerAdapter.getItem(0));
+				if (handheldFragment != null) {
+					handheldFragment.setCredentialId(portrait.getPrintedCode());
 				}
+
 			}
 		}
 
 	}
 
-	private void listRecords() {
-		swipeRefreshLayout.setRefreshing(true);
-		MySQLiteHelper db = new MySQLiteHelper(this.getApplicationContext());
-		List<Journal> records = db.getAllRecords();
-		ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>();
-		for (int i = 0; i < records.size(); i++) {
-
-			HashMap<String, String> item = new HashMap<String, String>();
-			item.put("badge", records.get(i).getName() + "("
-					+ records.get(i).getBadge() + ")");
-			item.put("log", records.get(i).getDescLog());
-			item.put("door", records.get(i).getDoor());
-			String dateString = DateFormat.format("E, MMM dd, h:mm aa",
-					new Date(records.get(i).getTime())).toString();
-			item.put("time", dateString);
-			list.add(item);
-		}
-		ListView recordsListView = null;
-		recordsListView = (ListView) findViewById(R.id.journal_log);
-
-		String[] columns = new String[] { "badge", "time", "door", "log" };
-		int[] renderTo = new int[] { R.id.badge, R.id.time, R.id.door, R.id.log };
-
-		ListAdapter listAdapter = new SimpleAdapter(this, list,
-				R.layout.journal_row, columns, renderTo);
-
-		recordsListView.setAdapter(listAdapter);
-		swipeRefreshLayout.setRefreshing(false);
-	}
-
 	private void deleteRecords() {
-		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		MySQLiteHelper db = new MySQLiteHelper(
+				MainActivity.this.getApplicationContext());
+		db.deleteRecords();
+		//listRecords();
+		/*AlertDialog.Builder builder = new AlertDialog.Builder(this);
 		builder.setMessage(R.string.dialog_delete_message);
 		builder.setTitle(R.string.dialog_delete_title);
 		builder.setPositiveButton(R.string.dialog_delete_delete,
 				new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int id) {
-						MySQLiteHelper db = new MySQLiteHelper(
-								MainActivity.this.getApplicationContext());
-						db.deleteRecords();
-						listRecords();
+
+
 					}
 				});
 		builder.setNegativeButton(R.string.dialog_delete_cancel,
@@ -223,7 +198,7 @@ public class MainActivity extends AppCompatActivity implements
 				});
 		AlertDialog dialog = builder.create();
 		dialog.setCancelable(false);
-		dialog.show();
+		dialog.show();*/
 	}
 
 	private long getDec(byte[] bytes) {
@@ -254,11 +229,11 @@ public class MainActivity extends AppCompatActivity implements
 		/*
 		 * case R.id.action_list: listRecords(); return true;
 		 */
-		case R.id.action_send:
+		/*case R.id.action_send:
 			sendRecords();
 			return true;
-			/*
 			  case R.id.action_delete: deleteRecords(); return true;*/
+
 		case R.id.action_update:
 			updatePortraits();
 			return true;
@@ -283,13 +258,13 @@ public class MainActivity extends AppCompatActivity implements
 			editor.putString("logExit_id", "ExitSouthEntrance");
 			editor.commit();
 			break;
-		case R.id.door_main:
+		/*case R.id.door_main:
 			editor.putString("door_id", "Main Gate");
 			editor.putString("area_id", "Plant");
 			editor.putString("logEntry_id", "EntryMainGate");
 			editor.putString("logExit_id", "ExitMainGate");
 			editor.commit();
-			break;
+			break;*/
 		default:
 			break;
 		}
@@ -309,14 +284,23 @@ public class MainActivity extends AppCompatActivity implements
 		for (NetworkInfo ni : netInfo) {
 			if (ni.getTypeName().equalsIgnoreCase("WIFI"))
 				if (!ni.isConnected()) {
-					Toast.makeText(this, "Please connect to PeruLNG network.",
-							Toast.LENGTH_LONG).show();
+					AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+					alertDialogBuilder.setTitle("Handheld");
+					alertDialogBuilder.setMessage("Red WiFi no Disponible");
+					alertDialogBuilder.setCancelable(false);
+					alertDialogBuilder.setPositiveButton("Ok",
+							new DialogInterface.OnClickListener() {
+								public void onClick(DialogInterface dialog, int id) {
+									dialog.cancel();
+								}
+							});
+					alertDialogBuilder.create().show();
 					return;
 				}
 		}
 
 		MySQLiteHelper db = new MySQLiteHelper(this.getApplicationContext());
-		List<Journal> records = db.getAllRecords();
+		List<Journal> records = db.getAllRecords(null);
 
 		if (records.size() > 0) {
 			progress.setMessage(getResources().getString(
@@ -346,8 +330,17 @@ public class MainActivity extends AppCompatActivity implements
 				Log.d("Send", serverURL);
 			}
 		} else {
-			Toast.makeText(this, "No hay registros disponibles",
-					Toast.LENGTH_LONG).show();
+			AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+			alertDialogBuilder.setTitle("Handheld");
+			alertDialogBuilder.setMessage("No hay registros disponibles");
+			alertDialogBuilder.setCancelable(false);
+			alertDialogBuilder.setPositiveButton("Ok",
+					new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog, int id) {
+							dialog.cancel();
+						}
+					});
+			alertDialogBuilder.create().show();
 
 		}
 	}
@@ -364,8 +357,9 @@ public class MainActivity extends AppCompatActivity implements
 					return;
 				}
 		}
+		String area = getSharedPreferences(MainActivity.PREFS_NAME, 0).getString("area_id", "Process");
 		String serverURL = getResources().getString(R.string.service_url)
-				+ "/PersonnelOfflineService/" + UUID.randomUUID().toString();
+				+ "/PersonnelOfflineService/"+area+"/" + UUID.randomUUID().toString();
 
 		Log.d("URL Personnel", serverURL);
 		QueryPortraitsTask portraitsTask = new QueryPortraitsTask();
@@ -455,8 +449,19 @@ public class MainActivity extends AppCompatActivity implements
 				progress.dismiss();
 				MainActivity.this.runOnUiThread(new Runnable() {
 					public void run() {
-						Toast.makeText(MainActivity.this, "Descarga Completa",
-								Toast.LENGTH_LONG).show();
+						SimpleDateFormat newDateFormat = new SimpleDateFormat(
+								"EEEE, d MMMM yyyy h:mm a");
+						Calendar today = Calendar.getInstance();
+						SharedPreferences settings = getSharedPreferences(
+								PREFS_NAME, 0);
+						SharedPreferences.Editor editor = settings.edit();
+						editor.putString("lastupdate",
+								newDateFormat.format(today.getTime()));
+						editor.commit();
+
+						MainActivity.this.showLastUpdate();
+						//Concatenate task
+						MainActivity.this.sendRecords();
 					}
 				});
 
@@ -539,22 +544,28 @@ public class MainActivity extends AppCompatActivity implements
 
 		protected void onProgressUpdate(Integer... _progress) {
 			if (index == total - 1) {
-				parent.listRecords();
+
+				parent.deleteRecords();
 				progress.dismiss();
-				MainActivity.this.runOnUiThread(new Runnable() {
-					public void run() {
-						Toast.makeText(MainActivity.this, "Envio Completo",
-								Toast.LENGTH_LONG).show();
-					}
-				});
+				AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
+				alertDialogBuilder.setTitle("Handheld");
+				alertDialogBuilder.setMessage("Actualización Completa");
+				alertDialogBuilder.setCancelable(false);
+				alertDialogBuilder.setPositiveButton("Ok",
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int id) {
+								dialog.cancel();
+							}
+						});
+				alertDialogBuilder.create().show();
 			}
 		}
 
 		protected void onPostExecute(Void result) {
 
 			try {
-				JSONObject jsonResponse = new JSONObject(response);
-				/*
+				/*JSONObject jsonResponse = new JSONObject(response);
+
 				 * String log = jsonResponse.optString("log").contains("Entry")
 				 * ? "Entrada" : "Salida"; response =
 				 * jsonResponse.optString("records") + " " + log +
@@ -562,14 +573,14 @@ public class MainActivity extends AppCompatActivity implements
 				 * 
 				 * Toast.makeText(MainActivity.this, response,
 				 * Toast.LENGTH_LONG) .show();
-				 */
+
 				String guid = jsonResponse.optString("guid");
 				MySQLiteHelper db = new MySQLiteHelper(
 						MainActivity.this.getApplicationContext());
 				Journal record = new Journal(guid, null, null, null, 0, false,
 						null, null);
 				db.updateRecord(record);
-				// Log.d("Sent", guid);
+				// Log.d("Sent", guid);*/
 				MainActivity.this.runOnUiThread(new Runnable() { public void
 				 run() { publishProgress(0); } });
 
@@ -582,6 +593,68 @@ public class MainActivity extends AppCompatActivity implements
 				 * "Couldn't Complete Send", Toast.LENGTH_LONG).show(); } });
 				 */
 			}
+		}
+	}
+	@Override
+	public void onHandheldFragmentInteraction() {
+
+	}
+	@Override
+	public void onEntranceFragmentInteraction() {
+
+	}
+	@Override
+	public void onExitFragmentInteraction() {
+
+	}
+	public class SectionsPagerAdapter extends FragmentPagerAdapter {
+		private HandheldFragment handheldFragment;
+		private EntranceFragment entranceFragment;
+		private ExitFragment exitFragment;
+
+		public SectionsPagerAdapter(FragmentManager fm) {
+			super(fm);
+		}
+
+		@Override
+		public Fragment getItem(int position) {
+			Fragment fragment = null;
+			if (position == 0) {
+				if (handheldFragment == null) {
+					handheldFragment = new HandheldFragment();
+				}
+				fragment = handheldFragment;
+			} else if (position == 1) {
+				if (entranceFragment == null) {
+					entranceFragment = new EntranceFragment();
+				}
+				fragment = entranceFragment;
+			} else if (position == 2) {
+				if (exitFragment == null) {
+					exitFragment = new ExitFragment();
+				}
+				fragment = exitFragment;
+			}
+			return fragment;
+		}
+
+		@Override
+		public int getCount() {
+			// Show 3 total pages.
+			return 3;
+		}
+
+		@Override
+		public CharSequence getPageTitle(int position) {
+			switch (position) {
+				case 0:
+					return "HANDHELD";
+				case 1:
+					return "ENTRANCE";
+				case 2:
+					return "EXIT";
+			}
+			return null;
 		}
 	}
 }
