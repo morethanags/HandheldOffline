@@ -6,38 +6,32 @@
     density="xxhdpi"
     format="10"
     plugin-version="2.3.3"
-    timestamp="1515623062032"
+    timestamp="1523283882966"
     token="6233619501873541"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="1660" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="47" />
+        duration="0" />
     <task
         name="verifier"
-        duration="23" />
+        duration="0" />
 
-    <artifact
-        location="E:\MobileApps\Android-Studio\projects\HandheldOffline\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
-        type="SPLIT" />
     <artifact
         location="E:\MobileApps\Android-Studio\projects\HandheldOffline\app\build\outputs\apk\app-debug.apk"
         type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
-        timestamp="1515614403681"
+        timestamp="1523283822857"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="E:\MobileApps\Android-Studio\projects\HandheldOffline\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
-            type="SPLIT" />
-        <artifact
             location="E:\MobileApps\Android-Studio\projects\HandheldOffline\app\build\outputs\apk\app-debug.apk"
             type="SPLIT_MAIN" />
         <artifact
@@ -68,64 +62,16 @@
             location="E:\MobileApps\Android-Studio\projects\HandheldOffline\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
             type="SPLIT" />
         <artifact
-            location="E:\MobileApps\Android-Studio\projects\HandheldOffline\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
-            type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        timestamp="1515618431403"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="E:\MobileApps\Android-Studio\projects\HandheldOffline\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
-            type="SPLIT" />
-        <artifact
-            location="E:\MobileApps\Android-Studio\projects\HandheldOffline\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
-            type="SPLIT" />
-        <artifact
-            location="E:\MobileApps\Android-Studio\projects\HandheldOffline\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
-            type="SPLIT" />
-        <artifact
-            location="E:\MobileApps\Android-Studio\projects\HandheldOffline\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
-            type="SPLIT" />
-        <artifact
-            location="E:\MobileApps\Android-Studio\projects\HandheldOffline\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
-            type="SPLIT" />
-        <artifact
-            location="E:\MobileApps\Android-Studio\projects\HandheldOffline\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
-            type="SPLIT" />
-        <artifact
-            location="E:\MobileApps\Android-Studio\projects\HandheldOffline\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
-            type="SPLIT" />
-        <artifact
-            location="E:\MobileApps\Android-Studio\projects\HandheldOffline\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
-            type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        timestamp="1515622600160"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="E:\MobileApps\Android-Studio\projects\HandheldOffline\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
-            type="SPLIT" />
-        <artifact
-            location="E:\MobileApps\Android-Studio\projects\HandheldOffline\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
-            type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        timestamp="1515622962981"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="E:\MobileApps\Android-Studio\projects\HandheldOffline\app\build\outputs\apk\app-debug.apk"
-            type="SPLIT_MAIN" />
-    </build>
-    <build
-        build-mode="COLD"
-        timestamp="1515623062032"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
             location="E:\MobileApps\Android-Studio\projects\HandheldOffline\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
             type="SPLIT" />
+        <artifact
+            location="E:\MobileApps\Android-Studio\projects\HandheldOffline\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        timestamp="1523283882966"
+        verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="E:\MobileApps\Android-Studio\projects\HandheldOffline\app\build\outputs\apk\app-debug.apk"
             type="SPLIT_MAIN" />

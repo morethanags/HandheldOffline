@@ -79,7 +79,6 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 		return records;
 	}
 
-	
 	public void deleteRecords() {
 		SQLiteDatabase db = this.getWritableDatabase();
 		db.execSQL("delete from " + TABLE_RECORD);
