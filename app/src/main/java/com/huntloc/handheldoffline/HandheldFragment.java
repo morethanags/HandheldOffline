@@ -4,7 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.Uri;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.KeyEvent;
@@ -16,6 +16,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
+
+import java.util.Calendar;
+import java.util.Date;
+
+import android.util.Log;
 
 public class HandheldFragment extends Fragment {
 
@@ -40,11 +46,13 @@ public class HandheldFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
     }
+
     public void clearCredentialId() {
-        if(mCredentialId!=null){
+        if (mCredentialId != null) {
             mCredentialId.setText("");
         }
     }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -90,18 +98,96 @@ public class HandheldFragment extends Fragment {
         mCredentialId.setText(id);
         processCode(id);
     }
-    private void processCode(String code){
+
+    private Date parseString(String date) {
+        String value = date.replaceFirst("\\D+([^\\)]+).+", "$1");
+        String[] timeComponents = value.split("[\\-\\+]");
+        long time = Long.parseLong(timeComponents[0]);
+
+		/*  int timeZoneOffset = Integer.valueOf(timeComponents[1]) * 36000; if
+          (value.indexOf("-") > 0) { timeZoneOffset *= -1; } time +=
+		  timeZoneOffset;*/
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(time);
+        /*calendar.set(Calendar.HOUR, 0);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.HOUR_OF_DAY, 0);*/
+        return calendar.getTime();
+
+    }
+
+    private void processCode(String code) {
         MySQLiteHelper db = new MySQLiteHelper(
                 getContext());
         Portrait portrait = db.getPortrait(code);
         if (portrait != null) {
-            Intent newIntent = new Intent(getActivity(),
-                    JournalActivity.class);
-            newIntent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
-            newIntent
-                    .putExtra(EXTRA_MESSAGE, code);
-            startActivity(newIntent);
-            clearCredentialId();
+            boolean ready = true;
+            if (portrait.getExpiration() != null) {
+                SimpleDateFormat dateFormat = new SimpleDateFormat("d MMMM yyyy h:mm a");
+                SimpleDateFormat dateFormat1 = new SimpleDateFormat("d MMMM yyyy");
+                Calendar today = Calendar.getInstance();
+                Date ExpirationDate = parseString(portrait.getExpiration());
+                Log.d("Today", dateFormat.format(today.getTime()));
+                Log.d("ExpirationDate", dateFormat.format(ExpirationDate));
+                if (ExpirationDate.before(today.getTime())) {//comparamos fechas y hora exactas
+                    ready = false;
+                    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
+                    alertDialogBuilder.setTitle("Handheld");
+                    alertDialogBuilder.setMessage("Credencial vencida\n" +
+                            dateFormat.format(ExpirationDate));
+                    alertDialogBuilder.setCancelable(false);
+                    alertDialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.cancel();
+                        }
+                    });
+                    alertDialogBuilder.create().show();
+                } else {
+                    if (portrait.getCamoExpiration() != null) {
+                        Date CAMODate = parseString(portrait.getCamoExpiration());
+                        Calendar calendar = Calendar.getInstance();
+                        calendar.setTime(CAMODate);
+                        calendar.add(Calendar.DATE, 1);
+                        calendar.set(Calendar.HOUR, 0);
+                        calendar.set(Calendar.MINUTE, 0);
+                        calendar.set(Calendar.SECOND, 0);
+                        calendar.set(Calendar.HOUR_OF_DAY, 0);
+                        Log.d("CAMODate", dateFormat1.format(CAMODate));
+                        if (calendar.getTime().before(today.getTime())) {
+                            ready = false;
+                            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
+                            alertDialogBuilder.setTitle("Handheld");
+                            alertDialogBuilder.setMessage("Certificado de aptitud médico ocupacional vencido\n" +
+                                    dateFormat1.format(CAMODate));
+                            alertDialogBuilder.setCancelable(false);
+                            alertDialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.cancel();
+                                }
+                            });
+                            alertDialogBuilder.create().show();
+                        }
+                    }
+                }
+
+
+            } else {
+                ready = false;
+            }
+            if (ready) {
+                Intent newIntent = new Intent(getActivity(),
+                        JournalActivity.class);
+                newIntent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                newIntent
+                        .putExtra(EXTRA_MESSAGE, code);
+                startActivity(newIntent);
+                clearCredentialId();
+            } else {
+                clearCredentialId();
+                return;
+            }
         } else {
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
             alertDialogBuilder.setTitle("Handheld");
@@ -114,7 +200,9 @@ public class HandheldFragment extends Fragment {
             });
             alertDialogBuilder.create().show();
         }
+
     }
+
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);

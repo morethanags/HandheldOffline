@@ -5,11 +5,28 @@ public class Portrait {
 	private String printedCode;
 	private String portrait;
 	private String name;
-	public Portrait(String internalCode, String printedCode, String portrait, String name) {
+
+	public String getAccess() {
+		return access;
+	}
+
+	public void setAccess(String access) {
+		this.access = access;
+	}
+
+	private String access;
+	private String camoExpiration;
+	private String expiration;
+
+	public Portrait(String internalCode, String printedCode, String portrait, String name, String access, String camoExpiration, String expiration) {
 		this.internalCode = internalCode;
 		this.printedCode = printedCode;
 		this.portrait = portrait;
 		this.name = name;
+		this.access = access;
+		this.camoExpiration = camoExpiration;
+		this.expiration = expiration;
+
 	}
 	public String getName() {
 		return name;
@@ -35,5 +52,20 @@ public class Portrait {
 	public void setPortrait(String portrait) {
 		this.portrait = portrait;
 	}
-	
+
+	public String getCamoExpiration() {
+		return camoExpiration;
+	}
+
+	public void setCamoExpiration(String camoExpiration) {
+		this.camoExpiration = camoExpiration;
+	}
+
+	public String getExpiration() {
+		return expiration;
+	}
+
+	public void setExpiration(String expiration) {
+		this.expiration = expiration;
+	}
 }

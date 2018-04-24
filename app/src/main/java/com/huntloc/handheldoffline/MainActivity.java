@@ -9,6 +9,7 @@ import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -18,7 +19,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 
-import android.os.Debug;
+
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -54,14 +55,13 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity implements
         HandheldFragment.OnHandheldFragmentInteractionListener,
         EntranceFragment.OnEntranceFragmentInteractionListener, ExitFragment.OnExitFragmentInteractionListener {
-    private NfcAdapter mNfcAdapter;
-    private static long back_pressed;
     public static final String EXTRA_MESSAGE = "com.huntloc.handheldoffline.MESSAGE";
     public static final String PREFS_NAME = "HandheldOfflinePrefsFile";
+    private static long back_pressed;
     //private SwipeRefreshLayout swipeRefreshLayout;
     ProgressDialog progress;
-
     TextView textView_lastupdate_date;
+    private NfcAdapter mNfcAdapter;
     private SectionsPagerAdapter mSectionsPagerAdapter;
 
     private ViewPager mViewPager;
@@ -174,7 +174,8 @@ public class MainActivity extends AppCompatActivity implements
                 MySQLiteHelper db = new MySQLiteHelper(
                         getApplicationContext());
                 Portrait portrait = db.getPortrait(Long.toString(getDec(id)));
-                if (portrait != null) {
+
+                if (portrait != null ) {
                     HandheldFragment handheldFragment = ((HandheldFragment) mSectionsPagerAdapter.getItem(0));
                     if (handheldFragment != null) {
                         handheldFragment.setCredentialId(portrait.getPrintedCode());
@@ -193,6 +194,25 @@ public class MainActivity extends AppCompatActivity implements
                 }
             }
         }
+    }
+
+    private Date parseString(String date) {
+        String value = date.replaceFirst("\\D+([^\\)]+).+", "$1");
+        String[] timeComponents = value.split("[\\-\\+]");
+        long time = Long.parseLong(timeComponents[0]);
+
+		/*  int timeZoneOffset = Integer.valueOf(timeComponents[1]) * 36000; if
+          (value.indexOf("-") > 0) { timeZoneOffset *= -1; } time +=
+		  timeZoneOffset;*/
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(time);
+        /*calendar.set(Calendar.HOUR, 0);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.HOUR_OF_DAY, 0);*/
+        return calendar.getTime();
+
     }
 
     private void deleteRecords() {
@@ -256,7 +276,7 @@ public class MainActivity extends AppCompatActivity implements
             case R.id.action_update:
                 updatePortraits();
                 return true;
-            /*case R.id.door_sliding:
+            case R.id.door_sliding:
                 checkClearance(getSharedPreferences(MainActivity.PREFS_NAME, 0).getString("area_id", "Process"),"Process" );
                 editor.putString("door_id", "Sliding Gate");
                 editor.putString("area_id", "Process");
@@ -280,15 +300,15 @@ public class MainActivity extends AppCompatActivity implements
                 editor.putString("logEntry_id", "EntrySouthEntrance");
                 editor.putString("logExit_id", "ExitSouthEntrance");
                 editor.commit();
-                break;*/
-            case R.id.door_main:
+                break;
+            /*case R.id.door_main:
                 checkClearance(getSharedPreferences(MainActivity.PREFS_NAME, 0).getString("area_id", "Process"), "Plant");
                 editor.putString("door_id", "Main Gate Offline");
                 editor.putString("area_id", "Plant");
                 editor.putString("logEntry_id", "EntryMainGate");
                 editor.putString("logExit_id", "ExitMainGate");
                 editor.commit();
-                break;
+                break;*/
             default:
                 break;
         }
@@ -301,9 +321,9 @@ public class MainActivity extends AppCompatActivity implements
         return super.onOptionsItemSelected(item);
     }
 
-    private void checkClearance(String currentarea,String newarea){
-        Log.d("areas",currentarea+" "+newarea);
-        if(!currentarea.equalsIgnoreCase(newarea)){
+    private void checkClearance(String currentarea, String newarea) {
+        Log.d("areas", currentarea + " " + newarea);
+        if (!currentarea.equalsIgnoreCase(newarea)) {
             Toast.makeText(getBaseContext(), "Por favor sincronizar información",
                     Toast.LENGTH_SHORT).show();
         }
@@ -412,6 +432,21 @@ public class MainActivity extends AppCompatActivity implements
         back_pressed = System.currentTimeMillis();
     }
 
+    @Override
+    public void onHandheldFragmentInteraction() {
+
+    }
+
+    @Override
+    public void onEntranceFragmentInteraction() {
+
+    }
+
+    @Override
+    public void onExitFragmentInteraction() {
+
+    }
+
     private class QueryPortraitsTask extends AsyncTask<String, Integer, Void> {
 
         String response = "";
@@ -475,10 +510,14 @@ public class MainActivity extends AppCompatActivity implements
                             .optString("InternalCode"), jsonArray
                             .getJSONObject(i).optString("PrintedCode"),
                             jsonArray.getJSONObject(i).optString("Portrait"),
-                            jsonArray.getJSONObject(i).optString("Name"));
+                            jsonArray.getJSONObject(i).optString("Name"),
+                            jsonArray.getJSONObject(i).optString("Access"),
+                            jsonArray.getJSONObject(i).isNull("CAMOExpirationDate") ? null : jsonArray.getJSONObject(i).optString("CAMOExpirationDate"),
+                            jsonArray.getJSONObject(i).isNull("ExpirationDate") ? null : jsonArray.getJSONObject(i).optString("ExpirationDate"));
                     db.addPortrait(portrait);
 
                 }
+                Log.d("countPortrait", jsonArray.length() + "");
                 progress.dismiss();
                 MainActivity.this.runOnUiThread(new Runnable() {
                     public void run() {
@@ -603,7 +642,7 @@ public class MainActivity extends AppCompatActivity implements
 				 * ? "Entrada" : "Salida"; response =
 				 * jsonResponse.optString("records") + " " + log +
 				 * " Registrada";
-				 * 
+				 *
 				 * Toast.makeText(MainActivity.this, response,
 				 * Toast.LENGTH_LONG) .show();
 
@@ -631,21 +670,6 @@ public class MainActivity extends AppCompatActivity implements
 				 */
             }
         }
-    }
-
-    @Override
-    public void onHandheldFragmentInteraction() {
-
-    }
-
-    @Override
-    public void onEntranceFragmentInteraction() {
-
-    }
-
-    @Override
-    public void onExitFragmentInteraction() {
-
     }
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {

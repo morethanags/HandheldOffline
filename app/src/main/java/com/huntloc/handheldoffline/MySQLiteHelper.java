@@ -23,7 +23,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 				+ "guid TEXT PRIMARY KEY, badge TEXT, log TEXT, door TEXT, time TEXT, sent INTEGER, name TEXT, descLog TEXT )";
 		db.execSQL(CREATE_BADGE_TABLE);
 		
-		String CREATE_PORTRAIT_TABLE = "CREATE TABLE Portrait ( "+ "internalCode TEXT PRIMARY KEY, printedCode TEXT, portrait TEXT, name TEXT )";
+		String CREATE_PORTRAIT_TABLE = "CREATE TABLE Portrait ( "+ "internalCode TEXT PRIMARY KEY, printedCode TEXT, portrait TEXT, name TEXT, access TEXT, camoExpiration TEXT, expiration, TEXT)";
 		db.execSQL(CREATE_PORTRAIT_TABLE);
 	}
 
@@ -100,6 +100,11 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 	private static final String KEY_INTERNAL_CODE = "internalCode";
 	private static final String KEY_PRINTED_CODE = "printedCode";
 	private static final String KEY_PORTRAIT = "portrait";
+
+	private static final String KEY_ACCESS = "access";
+	private static final String KEY_CAMO_EXPIRATION = "camoExpiration";
+	private static final String KEY_EXPIRATION = "expiration";
+
 	//private static final String[] COLUMNS1 = { KEY_INTERNAL_CODE, KEY_PRINTED_CODE, KEY_PORTRAIT};
 	
 	public void addPortrait(Portrait portrait) {
@@ -110,6 +115,11 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 		values.put(KEY_PRINTED_CODE, portrait.getPrintedCode());
 		values.put(KEY_PORTRAIT, portrait.getPortrait());
 		values.put(KEY_NAME, portrait.getName());
+
+		values.put(KEY_ACCESS, portrait.getAccess());
+		values.put(KEY_CAMO_EXPIRATION, portrait.getCamoExpiration());
+		values.put(KEY_EXPIRATION, portrait.getExpiration());
+
 		db.insert(TABLE_PORTRAIT, null, values);
 		db.close();
 	}
@@ -121,15 +131,16 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 	}
 	public Portrait getPortrait(String code) {
 		Portrait portrait = null;
-		String query = "SELECT  * FROM " + TABLE_PORTRAIT + " where "+ KEY_INTERNAL_CODE +" = '"+code+"' OR "+ KEY_PRINTED_CODE+ "='"+code+"'";
+		String query = "SELECT * FROM " + TABLE_PORTRAIT + " where "+ KEY_INTERNAL_CODE +" = '"+code+"' OR "+ KEY_PRINTED_CODE+ "='"+code+"'";
 		
 		SQLiteDatabase db = this.getWritableDatabase();
 		Cursor cursor = db.rawQuery(query, null);
-		Log.d("count", ""+cursor.getColumnCount());
-		
+
 		if (cursor.moveToFirst()) {
-			portrait = new Portrait(cursor.getString(0),cursor.getString(1),cursor.getString(2), cursor.getString(3));
-			Log.d("getPortrait()", portrait.getInternalCode() + " "+portrait.getPrintedCode());
+			portrait = new Portrait(cursor.getString(0),cursor.getString(1),cursor.getString(2), cursor.getString(3), cursor.getString(4),
+					cursor.isNull(5)?null:cursor.getString(5),
+					cursor.isNull(6)?null:cursor.getString(6));
+			Log.d("getPortrait()", portrait.getPrintedCode());
 		}
 		db.close();
 		return portrait;

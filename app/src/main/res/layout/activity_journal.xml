@@ -1,6 +1,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="fill_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -10,49 +10,61 @@
     tools:context="com.huntloc.handheldoffline.JournalActivity" >
 
     <TextView
-        android:id="@+id/textView_CardId"
-        android:layout_width="wrap_content"
+        android:id="@+id/textView_Credential"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView_Name"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="left"
         android:textSize="18sp" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingLeft="0dp"
-        android:paddingRight="0dp"
-        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_clear_margin"
+        android:paddingLeft="@dimen/activity_clear_margin"
+        android:paddingRight="@dimen/activity_clear_margin"
+        android:paddingTop="@dimen/activity_clear_margin"
         >
 
         <ImageView
             android:id="@+id/imageView_Portrait"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".5"
+            android:adjustViewBounds="true"
             android:contentDescription="@string/content_description"
-            android:minHeight="150dp"
-            android:minWidth="150dp"
-            android:scaleType="fitCenter" />
+            android:minHeight="300dp"
+            android:minWidth="300dp"
+            android:scaleType="fitCenter"
+            android:layout_gravity="center" />
 
         <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_weight=".5"
             android:orientation="vertical"
-            android:paddingBottom="0dp"
-            android:paddingLeft="0dp"
-            android:paddingRight="0dp"
-            android:paddingTop="0dp"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_clear_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
              >
 
             <Button
                 android:id="@+id/button_Entrance"
                 style="?android:attr/buttonStyleSmall"
-                android:layout_width="200dp"
-                android:layout_height="70dp"
-                android:layout_margin="2dp"
-                android:layout_weight="0"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_gravity="top"
+                android:layout_margin="0dp"
+                android:layout_weight=".45"
                 android:text="@string/button_Entrance_text"
                 android:textSize="18sp" />
 
@@ -64,10 +76,11 @@
             <Button
                 android:id="@+id/button_Exit"
                 style="?android:attr/buttonStyleSmall"
-                android:layout_width="200dp"
-                android:layout_height="70dp"
-                android:layout_margin="2dp"
-                android:layout_weight="0"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_gravity="top"
+                android:layout_margin="0dp"
+                android:layout_weight=".45"
                 android:text="@string/button_Exit_text"
                 android:textSize="18sp" />
         </LinearLayout>

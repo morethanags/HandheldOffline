@@ -20,7 +20,7 @@ import android.widget.TextView;
 
 public class JournalActivity extends AppCompatActivity {
 	String response, badge, name;
-	TextView cardIdText;
+	TextView textView_Credential, textView_Name;
 	Button buttonEntrance, buttonExit;
 	ImageView iv_portrait;
 	
@@ -36,20 +36,18 @@ public class JournalActivity extends AppCompatActivity {
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 		actionBar.setDisplayHomeAsUpEnabled(true);*/
 
-		
+		textView_Credential = (TextView) findViewById(R.id.textView_Credential);
+		textView_Name = (TextView) findViewById(R.id.textView_Name);
 
-		cardIdText = (TextView) findViewById(R.id.textView_CardId);
+
 		iv_portrait = (ImageView) findViewById(R.id.imageView_Portrait);
 		MySQLiteHelper db = new MySQLiteHelper(this.getApplicationContext());
 
 		Portrait portrait = db.getPortrait(response);
 
-		String outputData;
+		textView_Credential.setText("Credencial: " + portrait.getPrintedCode());
+		textView_Name.setText("Nombre: " + portrait.getName());
 
-		outputData = "CardID: " + portrait.getPrintedCode() + "\r\n";
-		outputData += "Nombre: " + portrait.getName() + "\r\n";
-		cardIdText.setText(outputData);
-		
 		byte[] byteArray;
 		Bitmap bitmap;
 		try {
