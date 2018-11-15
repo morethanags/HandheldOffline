@@ -68,4 +68,16 @@ public class Portrait {
 	public void setExpiration(String expiration) {
 		this.expiration = expiration;
 	}
+
+	@Override
+	public String toString() {
+		return "Portrait{" +
+				"internalCode='" + internalCode + '\'' +
+				", printedCode='" + printedCode + '\'' +
+				", name='" + name + '\'' +
+				", access='" + access + '\'' +
+				", camoExpiration='" + camoExpiration + '\'' +
+				", expiration='" + expiration + '\'' +
+				'}';
+	}
 }

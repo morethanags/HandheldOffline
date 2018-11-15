@@ -1,7 +1,7 @@
-#Tue Apr 24 13:58:36 COT 2018
+#Thu Nov 15 10:20:26 COT 2018
 base.0=E\:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_73a34d92dba81ff11f237f41d122205c1aebf23c
-renamed.1=classes2.dex
-renamed.0=classes.dex
+renamed.1=classes.dex
+renamed.0=classes2.dex
 file.1=E\:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_4445b220bd642f0004bfa934bdee1e274884fd40\\classes.dex
 base.1=E\:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_4445b220bd642f0004bfa934bdee1e274884fd40
 file.0=E\:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_73a34d92dba81ff11f237f41d122205c1aebf23c\\classes.dex

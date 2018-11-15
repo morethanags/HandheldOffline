@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Handheld Offline</string>
+    <string name="app_name">Handheld Offline V2</string>
     <string name="action_scan">Scan</string>
     <!--<string name="action_list">Refrescar Registros</string>
     <string name="action_send">Enviar Registros al CCURE</string>-->
@@ -25,7 +25,8 @@
     <string name="dialog_delete_message">Todos los registros serán eliminados!</string>
     <string name="dialog_delete_delete">Eliminar</string>
     <string name="dialog_delete_cancel">Cancelar</string>
-    <string name="service_url">http://plngmelas35.plng.pvt/ccure</string>
+    <string name="service_url">http://plngmelas08.plng.pvt/ccure9000/rest</string>
+    <!--<string name="service_url">http://dmoran.plng.pvt:8090/rest</string>-->
     <string name="title_activity_journal">JournalActivity</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>

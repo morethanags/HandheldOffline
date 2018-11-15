@@ -598,7 +598,7 @@ int id action_mode_bar 0x7f0c0057
 int id action_mode_bar_stub 0x7f0c0056
 int id action_mode_close_button 0x7f0c003c
 int id action_settings 0x7f0c0094
-int id action_update 0x7f0c009a
+int id action_update 0x7f0c009b
 int id activity_chooser_view_content 0x7f0c003d
 int id alertTitle 0x7f0c0049
 int id always 0x7f0c0033
@@ -632,6 +632,7 @@ int id design_menu_item_text 0x7f0c0078
 int id design_navigation_view 0x7f0c0077
 int id disableHome 0x7f0c000e
 int id door 0x7f0c0086
+int id door_main 0x7f0c009a
 int id door_north 0x7f0c0098
 int id door_process 0x7f0c0096
 int id door_sliding 0x7f0c0097

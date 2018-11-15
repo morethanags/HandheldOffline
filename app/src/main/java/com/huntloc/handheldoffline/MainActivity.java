@@ -100,21 +100,20 @@ public class MainActivity extends AppCompatActivity implements
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
         SharedPreferences.Editor editor = settings.edit();
 
-        /**Puertas*/
+        /**Puertas por defecto*/
         if (!settings.contains("door_id")) {
-            editor.putString("door_id", "Main Gate Offline");
+            editor.putString("door_id", "Sliding Gate Offline");
         }
         if (!settings.contains("area_id")) {
-            editor.putString("area_id", "Plant");
+            editor.putString("area_id", "Process");
         }
         if (!settings.contains("logEntry_id")) {
-            editor.putString("logEntry_id", "EntryMainGate");
+            editor.putString("logEntry_id", "EntrySlidingGate");
         }
         if (!settings.contains("logExit_id")) {
-            editor.putString("logExit_id", "ExitMainGate");
+            editor.putString("logExit_id", "ExitSlidingGate");
+
         }
-
-
         /***/
 
         if (!settings.contains("descLogEntry_id")) {
@@ -123,6 +122,8 @@ public class MainActivity extends AppCompatActivity implements
         if (!settings.contains("descLogExit_id")) {
             editor.putString("descLogExit_id", "Exit");
         }
+
+
         editor.commit();
 
         progress = new ProgressDialog(this);
@@ -173,6 +174,7 @@ public class MainActivity extends AppCompatActivity implements
                 byte[] id = tag.getId();
                 MySQLiteHelper db = new MySQLiteHelper(
                         getApplicationContext());
+                Log.d("ID",Long.toString(getDec(id)));
                 Portrait portrait = db.getPortrait(Long.toString(getDec(id)));
 
                 if (portrait != null ) {
@@ -278,7 +280,7 @@ public class MainActivity extends AppCompatActivity implements
                 return true;
             case R.id.door_sliding:
                 checkClearance(getSharedPreferences(MainActivity.PREFS_NAME, 0).getString("area_id", "Process"),"Process" );
-                editor.putString("door_id", "Sliding Gate");
+                editor.putString("door_id", "Sliding Gate Offline");
                 editor.putString("area_id", "Process");
                 editor.putString("logEntry_id", "EntrySlidingGate");
                 editor.putString("logExit_id", "ExitSlidingGate");
@@ -287,7 +289,7 @@ public class MainActivity extends AppCompatActivity implements
                 break;
             case R.id.door_north:
                 checkClearance(getSharedPreferences(MainActivity.PREFS_NAME, 0).getString("area_id", "Process"), "Process");
-                editor.putString("door_id", "North Entrance");
+                editor.putString("door_id", "North Entrance Offline");
                 editor.putString("area_id", "Process");
                 editor.putString("logEntry_id", "EntryNorthEntrance");
                 editor.putString("logExit_id", "ExitNorthEntrance");
@@ -295,18 +297,25 @@ public class MainActivity extends AppCompatActivity implements
                 break;
             case R.id.door_south:
                 checkClearance(getSharedPreferences(MainActivity.PREFS_NAME, 0).getString("area_id", "Process"), "Process");
-                editor.putString("door_id", "South Entrance");
+                editor.putString("door_id", "South Entrance Offline");
                 editor.putString("area_id", "Process");
                 editor.putString("logEntry_id", "EntrySouthEntrance");
                 editor.putString("logExit_id", "ExitSouthEntrance");
                 editor.commit();
                 break;
-            /*case R.id.door_main:
+            case R.id.door_main:
                 checkClearance(getSharedPreferences(MainActivity.PREFS_NAME, 0).getString("area_id", "Process"), "Plant");
                 editor.putString("door_id", "Main Gate Offline");
                 editor.putString("area_id", "Plant");
                 editor.putString("logEntry_id", "EntryMainGate");
                 editor.putString("logExit_id", "ExitMainGate");
+                editor.commit();
+                break;
+            /*case R.id.door_temp:
+                editor.putString("door_id", "Door 1");
+                editor.putString("area_id", "Temp");
+                editor.putString("logEntry_id", "EntryTemp");
+                editor.putString("logExit_id", "ExitTemp");
                 editor.commit();
                 break;*/
             default:
@@ -365,7 +374,7 @@ public class MainActivity extends AppCompatActivity implements
 
                 String serverURL = getResources().getString(
                         R.string.service_url)
-                        + "/JournalLogService/"
+                        + "/Journal/PostLogOffline/"
                         + records.get(i).getBadge()
                         + "/"
                         + records.get(i).getLog()
@@ -411,7 +420,7 @@ public class MainActivity extends AppCompatActivity implements
         }
         String area = getSharedPreferences(MainActivity.PREFS_NAME, 0).getString("area_id", "Process");
         String serverURL = getResources().getString(R.string.service_url)
-                + "/PersonnelOfflineService/" + area + "/" + UUID.randomUUID().toString();
+                + "/Access/GetPersonnelOffline/" + area ;
 
         Log.d("URL Personnel", serverURL);
         QueryPortraitsTask portraitsTask = new QueryPortraitsTask();
@@ -616,7 +625,6 @@ public class MainActivity extends AppCompatActivity implements
 
         protected void onProgressUpdate(Integer... _progress) {
             if (index == total - 1) {
-
                 parent.deleteRecords();
                 progress.dismiss();
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);

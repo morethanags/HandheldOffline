@@ -111,6 +111,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 		Log.d("addPortrait", portrait.toString());
 		SQLiteDatabase db = this.getWritableDatabase();
 		ContentValues values = new ContentValues();
+
 		values.put(KEY_INTERNAL_CODE, portrait.getInternalCode());
 		values.put(KEY_PRINTED_CODE, portrait.getPrintedCode());
 		values.put(KEY_PORTRAIT, portrait.getPortrait());

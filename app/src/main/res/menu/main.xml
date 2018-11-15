@@ -1,14 +1,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.huntloc.handheldoffline.MainActivity" >
+    tools:context="com.huntloc.handheldoffline.MainActivity">
 
-   <!--  <item
-        android:id="@+id/action_list"
-        
-        android:showAsAction="never"
-        android:title="@string/action_list"
-        android:orderInCategory="1"/> -->
+    <!--  <item
+         android:id="@+id/action_list"
+
+         android:showAsAction="never"
+         android:title="@string/action_list"
+         android:orderInCategory="1"/> -->
     <!--<item
         android:id="@+id/action_send"
        
@@ -21,37 +21,36 @@
         android:title="@string/action_delete" 
         android:orderInCategory="3"/>   -->
 
- <item
-         android:id="@+id/action_door"
-         android:title="@string/door_menu_title"
-         android:orderInCategory="4">
-     <menu>
-         <!--<group
-             android:id="@+id/door_plant"
-             android:checkableBehavior="single" >
-             <item
-                 android:id="@+id/door_main"
-                 android:title="Main Gate"/>
-         </group>-->
-         <group
-             android:id="@+id/door_process"
-             android:checkableBehavior="single" >
-             <item
-                 android:id="@+id/door_sliding"
-                 android:title="Sliding Gate"/>
-             <item
-                 android:id="@+id/door_north"
-                 android:title="North Entrance"/>
-             <item
-                 android:id="@+id/door_south"
-                 android:title="South Entrance"/>
-         </group>
-     </menu>
+    <item
+        android:id="@+id/action_door"
+        android:orderInCategory="4"
+        android:title="@string/door_menu_title"
+        android:visible="true">
+        <menu>
+
+            <group
+                android:id="@+id/door_process"
+                android:checkableBehavior="single">
+                <item
+                    android:id="@+id/door_sliding"
+                    android:title="Sliding Gate" />
+                <item
+                    android:id="@+id/door_north"
+                    android:title="North Entrance" />
+                <item
+                    android:id="@+id/door_south"
+                    android:title="South Entrance" />
+                <item
+                    android:id="@+id/door_main"
+                    android:title="Main Gate"  />
+
+            </group>
+        </menu>
 
 
- </item>
- <item
+    </item>
+    <item
         android:id="@+id/action_update"
-        android:title="@string/action_update"
-        android:orderInCategory="5"/>
+        android:orderInCategory="5"
+        android:title="@string/action_update" />
 </menu>

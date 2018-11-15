@@ -2297,7 +2297,7 @@ containing a value of this type.
         public static final int action_mode_bar_stub=0x7f0c0056;
         public static final int action_mode_close_button=0x7f0c003c;
         public static final int action_settings=0x7f0c0094;
-        public static final int action_update=0x7f0c009a;
+        public static final int action_update=0x7f0c009b;
         public static final int activity_chooser_view_content=0x7f0c003d;
         public static final int alertTitle=0x7f0c0049;
         public static final int always=0x7f0c0033;
@@ -2331,6 +2331,7 @@ containing a value of this type.
         public static final int design_navigation_view=0x7f0c0077;
         public static final int disableHome=0x7f0c000e;
         public static final int door=0x7f0c0086;
+        public static final int door_main=0x7f0c009a;
         public static final int door_north=0x7f0c0098;
         public static final int door_process=0x7f0c0096;
         public static final int door_sliding=0x7f0c0097;
