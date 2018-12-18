@@ -4,16 +4,20 @@
         "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\drawable-xhdpi-v4\\abc_list_selector_disabled_holo_dark.9.png"
     },
     {
-        "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png",
-        "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\drawable-xhdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png"
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\291de58f27b1812359d6eb08be7bb269bc270a6c\\output\\res\\drawable-xhdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
     },
     {
-        "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_spinner_mtrl_am_alpha.9.png",
-        "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\drawable-xhdpi-v4\\abc_spinner_mtrl_am_alpha.9.png"
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\291de58f27b1812359d6eb08be7bb269bc270a6c\\output\\res\\drawable-xhdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
     },
     {
         "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_star_black_36dp.png",
         "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\drawable-xhdpi-v4\\abc_ic_star_black_36dp.png"
+    },
+    {
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\291de58f27b1812359d6eb08be7bb269bc270a6c\\output\\res\\drawable-xhdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
     },
     {
         "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png",
@@ -24,32 +28,32 @@
         "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\drawable-xhdpi-v4\\abc_list_focused_holo.9.png"
     },
     {
-        "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_list_pressed_holo_dark.9.png",
-        "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\drawable-xhdpi-v4\\abc_list_pressed_holo_dark.9.png"
-    },
-    {
         "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png",
         "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\drawable-xhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
     },
     {
-        "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png",
-        "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\drawable-xhdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png"
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_list_pressed_holo_dark.9.png",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\291de58f27b1812359d6eb08be7bb269bc270a6c\\output\\res\\drawable-xhdpi-v4\\abc_list_pressed_holo_dark.9.png"
     },
     {
-        "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_list_longpressed_holo.9.png",
-        "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\drawable-xhdpi-v4\\abc_list_longpressed_holo.9.png"
-    },
-    {
-        "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png",
-        "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\drawable-xhdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_list_selector_disabled_holo_dark.9.png",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\291de58f27b1812359d6eb08be7bb269bc270a6c\\output\\res\\drawable-xhdpi-v4\\abc_list_selector_disabled_holo_dark.9.png"
     },
     {
         "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_btn_rating_star_on_mtrl_alpha.png",
         "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\drawable-xhdpi-v4\\abc_btn_rating_star_on_mtrl_alpha.png"
     },
     {
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\291de58f27b1812359d6eb08be7bb269bc270a6c\\output\\res\\drawable-xhdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png"
+    },
+    {
         "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png",
         "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\drawable-xhdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_textfield_default_mtrl_alpha.9.png",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\291de58f27b1812359d6eb08be7bb269bc270a6c\\output\\res\\drawable-xhdpi-v4\\abc_textfield_default_mtrl_alpha.9.png"
     },
     {
         "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_textfield_default_mtrl_alpha.9.png",
@@ -64,20 +68,12 @@
         "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\drawable-xhdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
     },
     {
-        "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_star_half_black_16dp.png",
-        "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\drawable-xhdpi-v4\\abc_ic_star_half_black_16dp.png"
-    },
-    {
         "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png",
         "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\drawable-xhdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png"
     },
     {
         "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_list_divider_mtrl_alpha.9.png",
         "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\drawable-xhdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
-    },
-    {
-        "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_star_half_black_36dp.png",
-        "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\drawable-xhdpi-v4\\abc_ic_star_half_black_36dp.png"
     },
     {
         "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png",
@@ -96,12 +92,144 @@
         "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\drawable-xhdpi-v4\\abc_list_selector_disabled_holo_light.9.png"
     },
     {
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_popup_background_mtrl_mult.9.png",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\291de58f27b1812359d6eb08be7bb269bc270a6c\\output\\res\\drawable-xhdpi-v4\\abc_popup_background_mtrl_mult.9.png"
+    },
+    {
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_btn_rating_star_on_mtrl_alpha.png",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\291de58f27b1812359d6eb08be7bb269bc270a6c\\output\\res\\drawable-xhdpi-v4\\abc_btn_rating_star_on_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\291de58f27b1812359d6eb08be7bb269bc270a6c\\output\\res\\drawable-xhdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_btn_rating_star_off_mtrl_alpha.png",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\291de58f27b1812359d6eb08be7bb269bc270a6c\\output\\res\\drawable-xhdpi-v4\\abc_btn_rating_star_off_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_star_black_16dp.png",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\291de58f27b1812359d6eb08be7bb269bc270a6c\\output\\res\\drawable-xhdpi-v4\\abc_ic_star_black_16dp.png"
+    },
+    {
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_list_pressed_holo_light.9.png",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\291de58f27b1812359d6eb08be7bb269bc270a6c\\output\\res\\drawable-xhdpi-v4\\abc_list_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_star_black_16dp.png",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\drawable-xhdpi-v4\\abc_ic_star_black_16dp.png"
+    },
+    {
+        "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\drawable-xhdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_list_longpressed_holo.9.png",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\291de58f27b1812359d6eb08be7bb269bc270a6c\\output\\res\\drawable-xhdpi-v4\\abc_list_longpressed_holo.9.png"
+    },
+    {
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\291de58f27b1812359d6eb08be7bb269bc270a6c\\output\\res\\drawable-xhdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
+    },
+    {
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\291de58f27b1812359d6eb08be7bb269bc270a6c\\output\\res\\drawable-xhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png"
+    },
+    {
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\291de58f27b1812359d6eb08be7bb269bc270a6c\\output\\res\\drawable-xhdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\drawable-xhdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png"
+    },
+    {
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_star_black_36dp.png",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\291de58f27b1812359d6eb08be7bb269bc270a6c\\output\\res\\drawable-xhdpi-v4\\abc_ic_star_black_36dp.png"
+    },
+    {
+        "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_spinner_mtrl_am_alpha.9.png",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\drawable-xhdpi-v4\\abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\291de58f27b1812359d6eb08be7bb269bc270a6c\\output\\res\\drawable-xhdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png"
+    },
+    {
+        "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_list_pressed_holo_dark.9.png",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\drawable-xhdpi-v4\\abc_list_pressed_holo_dark.9.png"
+    },
+    {
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_star_half_black_16dp.png",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\291de58f27b1812359d6eb08be7bb269bc270a6c\\output\\res\\drawable-xhdpi-v4\\abc_ic_star_half_black_16dp.png"
+    },
+    {
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_list_focused_holo.9.png",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\291de58f27b1812359d6eb08be7bb269bc270a6c\\output\\res\\drawable-xhdpi-v4\\abc_list_focused_holo.9.png"
+    },
+    {
+        "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_list_longpressed_holo.9.png",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\drawable-xhdpi-v4\\abc_list_longpressed_holo.9.png"
+    },
+    {
+        "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\drawable-xhdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\drawable-xhdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_switch_track_mtrl_alpha.9.png",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\291de58f27b1812359d6eb08be7bb269bc270a6c\\output\\res\\drawable-xhdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_star_half_black_36dp.png",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\291de58f27b1812359d6eb08be7bb269bc270a6c\\output\\res\\drawable-xhdpi-v4\\abc_ic_star_half_black_36dp.png"
+    },
+    {
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\291de58f27b1812359d6eb08be7bb269bc270a6c\\output\\res\\drawable-xhdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_star_half_black_16dp.png",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\drawable-xhdpi-v4\\abc_ic_star_half_black_16dp.png"
+    },
+    {
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_list_selector_disabled_holo_light.9.png",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\291de58f27b1812359d6eb08be7bb269bc270a6c\\output\\res\\drawable-xhdpi-v4\\abc_list_selector_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\291de58f27b1812359d6eb08be7bb269bc270a6c\\output\\res\\drawable-xhdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_star_half_black_36dp.png",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\drawable-xhdpi-v4\\abc_ic_star_half_black_36dp.png"
+    },
+    {
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\291de58f27b1812359d6eb08be7bb269bc270a6c\\output\\res\\drawable-xhdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png"
+    },
+    {
         "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png",
         "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\drawable-xhdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png"
     },
     {
         "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_btn_rating_star_off_mtrl_alpha.png",
         "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\drawable-xhdpi-v4\\abc_btn_rating_star_off_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\291de58f27b1812359d6eb08be7bb269bc270a6c\\output\\res\\drawable-xhdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_list_divider_mtrl_alpha.9.png",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\291de58f27b1812359d6eb08be7bb269bc270a6c\\output\\res\\drawable-xhdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\291de58f27b1812359d6eb08be7bb269bc270a6c\\output\\res\\drawable-xhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
     },
     {
         "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png",
@@ -112,10 +240,6 @@
         "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\drawable-xhdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
     },
     {
-        "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_star_black_16dp.png",
-        "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\drawable-xhdpi-v4\\abc_ic_star_black_16dp.png"
-    },
-    {
         "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png",
         "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\drawable-xhdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
     },
@@ -124,7 +248,11 @@
         "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\drawable-xhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png"
     },
     {
-        "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png",
-        "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\drawable-xhdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_spinner_mtrl_am_alpha.9.png",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\291de58f27b1812359d6eb08be7bb269bc270a6c\\output\\res\\drawable-xhdpi-v4\\abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\291de58f27b1812359d6eb08be7bb269bc270a6c\\output\\res\\drawable-xhdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
     }
 ]

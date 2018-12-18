@@ -4,6 +4,14 @@
         "source": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\src\\main\\res\\menu\\journal.xml"
     },
     {
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\menu\\main.xml",
+        "source": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\src\\main\\res\\menu\\main.xml"
+    },
+    {
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\menu\\journal.xml",
+        "source": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\src\\main\\res\\menu\\journal.xml"
+    },
+    {
         "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\menu\\main.xml",
         "source": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\src\\main\\res\\menu\\main.xml"
     }

@@ -2,5 +2,9 @@
     {
         "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher.png",
         "source": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher.png",
+        "source": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     }
 ]

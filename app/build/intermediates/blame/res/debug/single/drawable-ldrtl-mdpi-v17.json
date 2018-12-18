@@ -1,5 +1,9 @@
 [
     {
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-mdpi-v17\\abc_spinner_mtrl_am_alpha.9.png",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\291de58f27b1812359d6eb08be7bb269bc270a6c\\output\\res\\drawable-ldrtl-mdpi-v17\\abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
         "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-mdpi-v17\\abc_spinner_mtrl_am_alpha.9.png",
         "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\drawable-ldrtl-mdpi-v17\\abc_spinner_mtrl_am_alpha.9.png"
     }

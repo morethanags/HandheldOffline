@@ -19,7 +19,9 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 
-
+import android.app.PendingIntent;
+import android.content.IntentFilter;
+import android.os.Handler;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -65,6 +67,7 @@ public class MainActivity extends AppCompatActivity implements
     private SectionsPagerAdapter mSectionsPagerAdapter;
 
     private ViewPager mViewPager;
+    public static final String MIME_TEXT_PLAIN = "text/plain";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -145,11 +148,6 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void onResume() {
-        super.onResume();
-    }
-
-    @Override
     protected void onNewIntent(Intent intent) {
         handleIntent(intent);
     }
@@ -174,14 +172,22 @@ public class MainActivity extends AppCompatActivity implements
                 byte[] id = tag.getId();
                 MySQLiteHelper db = new MySQLiteHelper(
                         getApplicationContext());
-                Log.d("ID",Long.toString(getDec(id)));
-                Portrait portrait = db.getPortrait(Long.toString(getDec(id)));
+                Log.d("ID", Long.toString(getDec(id)));
+                final Portrait portrait = db.getPortrait(Long.toString(getDec(id)));
 
-                if (portrait != null ) {
-                    HandheldFragment handheldFragment = ((HandheldFragment) mSectionsPagerAdapter.getItem(0));
-                    if (handheldFragment != null) {
-                        handheldFragment.setCredentialId(portrait.getPrintedCode());
-                    }
+                if (portrait != null) {
+
+                    final Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            HandheldFragment handheldFragment = ((HandheldFragment) mSectionsPagerAdapter.getItem(0));
+                            if (handheldFragment != null) {
+                                handheldFragment.setCredentialId(portrait.getPrintedCode());
+                            }
+                        }
+                    }, 1000);
+
                 } else {
                     AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
                     alertDialogBuilder.setTitle("Handheld");
@@ -223,7 +229,7 @@ public class MainActivity extends AppCompatActivity implements
         db.deleteRecords();
         //listRecords();
         /*AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setMessage(R.string.dialog_delete_message);
+        builder.setMessage(R.string.dialog_delete_message);
 		builder.setTitle(R.string.dialog_delete_title);
 		builder.setPositiveButton(R.string.dialog_delete_delete,
 				new DialogInterface.OnClickListener() {
@@ -279,7 +285,7 @@ public class MainActivity extends AppCompatActivity implements
                 updatePortraits();
                 return true;
             case R.id.door_sliding:
-                checkClearance(getSharedPreferences(MainActivity.PREFS_NAME, 0).getString("area_id", "Process"),"Process" );
+                checkClearance(getSharedPreferences(MainActivity.PREFS_NAME, 0).getString("area_id", "Process"), "Process");
                 editor.putString("door_id", "Sliding Gate Offline");
                 editor.putString("area_id", "Process");
                 editor.putString("logEntry_id", "EntrySlidingGate");
@@ -420,7 +426,7 @@ public class MainActivity extends AppCompatActivity implements
         }
         String area = getSharedPreferences(MainActivity.PREFS_NAME, 0).getString("area_id", "Process");
         String serverURL = getResources().getString(R.string.service_url)
-                + "/Access/GetPersonnelOffline/" + area ;
+                + "/Access/GetPersonnelOffline/" + area;
 
         Log.d("URL Personnel", serverURL);
         QueryPortraitsTask portraitsTask = new QueryPortraitsTask();
@@ -445,6 +451,50 @@ public class MainActivity extends AppCompatActivity implements
     public void onHandheldFragmentInteraction() {
 
     }
+
+
+    protected void onResume() {
+        super.onResume();
+        setupForegroundDispatch(this, mNfcAdapter);
+    }
+
+    @Override
+    protected void onPause() {
+        stopForegroundDispatch(this, mNfcAdapter);
+        super.onPause();
+    }
+
+    public static void setupForegroundDispatch(AppCompatActivity activity,
+                                               NfcAdapter adapter) {
+        final Intent intent = new
+                Intent(activity.getApplicationContext(), activity.getClass());
+        intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        final PendingIntent
+                pendingIntent = PendingIntent.getActivity(
+                activity.getApplicationContext(), 0, intent, 0);
+        IntentFilter[] filters =
+                new IntentFilter[1];
+        String[][] techList = new String[][]{};
+        filters[0]
+                = new IntentFilter();
+        filters[0].addAction(NfcAdapter.ACTION_TAG_DISCOVERED);
+        filters[0].addCategory(Intent.CATEGORY_DEFAULT);
+        try {
+            filters[0].addDataType(MIME_TEXT_PLAIN);
+        } catch
+                (IntentFilter.MalformedMimeTypeException e) {
+            throw new
+                    RuntimeException("Check your mime type.");
+        }
+        adapter.enableForegroundDispatch(activity, pendingIntent, filters,
+                techList);
+    }
+
+    public static void stopForegroundDispatch(AppCompatActivity activity,
+                                              NfcAdapter adapter) {
+        adapter.disableForegroundDispatch(activity);
+    }
+
 
     @Override
     public void onEntranceFragmentInteraction() {

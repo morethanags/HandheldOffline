@@ -2,5 +2,9 @@
     {
         "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
         "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\color-v23\\abc_color_highlight_material.xml"
+    },
+    {
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\291de58f27b1812359d6eb08be7bb269bc270a6c\\output\\res\\color-v23\\abc_color_highlight_material.xml"
     }
 ]

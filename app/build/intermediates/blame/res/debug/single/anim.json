@@ -1,11 +1,7 @@
 [
     {
-        "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
-        "source": "C:\\Users\\dmoran\\.android\\build-cache\\719e65c9fc53bb6a2fce2a4e96d47c83c01e2c71\\output\\res\\anim\\design_snackbar_out.xml"
-    },
-    {
-        "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
-        "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\anim\\abc_fade_out.xml"
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\291de58f27b1812359d6eb08be7bb269bc270a6c\\output\\res\\anim\\abc_fade_in.xml"
     },
     {
         "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
@@ -16,10 +12,6 @@
         "source": "C:\\Users\\dmoran\\.android\\build-cache\\719e65c9fc53bb6a2fce2a4e96d47c83c01e2c71\\output\\res\\anim\\design_fab_in.xml"
     },
     {
-        "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
-        "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\anim\\abc_fade_in.xml"
-    },
-    {
         "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
         "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\anim\\abc_slide_in_top.xml"
     },
@@ -28,16 +20,36 @@
         "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\anim\\abc_slide_out_top.xml"
     },
     {
-        "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
-        "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\anim\\abc_popup_enter.xml"
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\291de58f27b1812359d6eb08be7bb269bc270a6c\\output\\res\\anim\\abc_fade_out.xml"
     },
     {
         "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
         "source": "C:\\Users\\dmoran\\.android\\build-cache\\719e65c9fc53bb6a2fce2a4e96d47c83c01e2c71\\output\\res\\anim\\design_fab_out.xml"
     },
     {
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\294ffb0ebe8fa168569ba458b97fd33a638c2f7d\\output\\res\\anim\\design_snackbar_out.xml"
+    },
+    {
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\291de58f27b1812359d6eb08be7bb269bc270a6c\\output\\res\\anim\\abc_slide_out_top.xml"
+    },
+    {
         "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
         "source": "C:\\Users\\dmoran\\.android\\build-cache\\719e65c9fc53bb6a2fce2a4e96d47c83c01e2c71\\output\\res\\anim\\design_snackbar_in.xml"
+    },
+    {
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\291de58f27b1812359d6eb08be7bb269bc270a6c\\output\\res\\anim\\abc_popup_enter.xml"
+    },
+    {
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\291de58f27b1812359d6eb08be7bb269bc270a6c\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
+    },
+    {
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\291de58f27b1812359d6eb08be7bb269bc270a6c\\output\\res\\anim\\abc_popup_exit.xml"
     },
     {
         "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
@@ -48,11 +60,55 @@
         "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\anim\\abc_popup_exit.xml"
     },
     {
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\291de58f27b1812359d6eb08be7bb269bc270a6c\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
+    },
+    {
         "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
         "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
     },
     {
         "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
         "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\anim\\abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\719e65c9fc53bb6a2fce2a4e96d47c83c01e2c71\\output\\res\\anim\\design_snackbar_out.xml"
+    },
+    {
+        "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\anim\\abc_fade_out.xml"
+    },
+    {
+        "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\anim\\abc_fade_in.xml"
+    },
+    {
+        "merged": "E:\\MobileApps\\Android-Studio\\projects\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\6bbf14ffbf9bd4a312ae29e1f6d0185863847780\\output\\res\\anim\\abc_popup_enter.xml"
+    },
+    {
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\291de58f27b1812359d6eb08be7bb269bc270a6c\\output\\res\\anim\\abc_slide_in_top.xml"
+    },
+    {
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\291de58f27b1812359d6eb08be7bb269bc270a6c\\output\\res\\anim\\abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\291de58f27b1812359d6eb08be7bb269bc270a6c\\output\\res\\anim\\abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\294ffb0ebe8fa168569ba458b97fd33a638c2f7d\\output\\res\\anim\\design_fab_out.xml"
+    },
+    {
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\294ffb0ebe8fa168569ba458b97fd33a638c2f7d\\output\\res\\anim\\design_fab_in.xml"
+    },
+    {
+        "merged": "C:\\Dev\\Android\\Workspace\\HandheldOffline\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
+        "source": "C:\\Users\\dmoran\\.android\\build-cache\\294ffb0ebe8fa168569ba458b97fd33a638c2f7d\\output\\res\\anim\\design_snackbar_in.xml"
     }
 ]
